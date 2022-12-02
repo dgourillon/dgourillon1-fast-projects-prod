@@ -1,0 +1,45 @@
+# skip boilerplate check
+
+#billing_account_id: 012345-67890A-BCDEF0
+
+# [opt] Setup for billing alerts
+billing_alert:
+  amount: 50
+  thresholds:
+    current: [0.5, 0.8]
+    forecasted: [0.5, 0.8]
+  credit_treatment: INCLUDE_ALL_CREDITS
+
+# [opt] Contacts for billing alerts and important notifications
+essential_contacts: ["dgourillon@google.com"]
+
+# [opt] Labels set for all projects
+labels:
+  environment: default-env
+  department: default-department
+  application: default-app
+  foo: bar
+
+# [opt] Additional notification channels for billing
+notification_channels: []
+
+# [opt] Service account to create for the project and their roles on the project
+# in name => [roles] format
+service_accounts:
+  default-compute-sa:
+    - roles/compute.admin
+
+
+# [opt] APIs to enable on the project.
+services:
+  - storage.googleapis.com
+  - stackdriver.googleapis.com
+  - compute.googleapis.com
+
+# [opt] Roles to assign to the service identities in service => [roles] format
+service_identities_iam:
+  compute:
+    - roles/storage.objectViewer
+
+
+ 
