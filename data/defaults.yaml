@@ -43,4 +43,5 @@ service_identities_iam:
     - roles/storage.objectViewer
 
 
- 
+# [opt] DNS zones to be created as children of the environment_dns_zone defined in defaults
+dns_zones: []
