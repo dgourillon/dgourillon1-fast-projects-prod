@@ -18,3 +18,8 @@ output "projects" {
   description = "Created projects and service accounts."
   value       = module.projects
 }
+
+output "debug_projects" {
+  description = "debug the yzml decode"
+  value       = local.projects
+}
